@@ -3,6 +3,7 @@ apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
   name: nifi
+  namespace: sample
   labels:
     kubeaddons.mesosphere.io/name: nifi
   annotations:

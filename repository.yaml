@@ -2,8 +2,8 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta2
 kind: AddonRepository
 metadata:
-  name: kubeaddons-custom-enterprise
-  namespace: production-nec
+  name: kubeaddons-enterprise
+  namespace: sample
 spec:
   priority: "1"
   url: "https://github.com/millerjem/kubeaddons-enterprise"

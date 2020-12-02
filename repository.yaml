@@ -5,4 +5,4 @@ metadata:
 spec:
   priority: "1"
   url: "https://github.com/millerjem/kubeaddons-enterprise"
-  ref: "example"
+  ref: "master"

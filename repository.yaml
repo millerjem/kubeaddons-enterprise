@@ -2,8 +2,8 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: AddonRepository
 metadata:
-  name: enterprise
+  name: example
 spec:
   priority: "1"
-  url: "https://github.com/mesosphere/kubeaddons-enterprise"
-  ref: "master"
+  url: "https://github.com/millerjem/kubeaddons-enterprise"
+  ref: "example"

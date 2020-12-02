@@ -2,13 +2,13 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: jenkins
+  name: nifi
   labels:
-    kubeaddons.mesosphere.io/name: jenkins
+    kubeaddons.mesosphere.io/name: nifi
   annotations:
-    catalog.kubeaddons.mesosphere.io/addon-revision: "1.9.4-1"
-    appversion.kubeaddons.mesosphere.io/jenkins: "1.9.4"
-    values.chart.helm.kubeaddons.mesosphere.io/jenkins: "https://raw.githubusercontent.com/helm/charts/master/stable/jenkins/values.yaml"
+    catalog.kubeaddons.mesosphere.io/addon-revision: "1.12.1-1"
+    appversion.kubeaddons.mesosphere.io/nifi: "1.12.1"
+    values.chart.helm.kubeaddons.mesosphere.io/nifi: "https://raw.githubusercontent.com/cetic/helm-nifi/master/values.yaml"
 spec:
   kubernetes:
     minSupportedVersion: v1.16.3
@@ -22,9 +22,9 @@ spec:
     - name: none
       enabled: true
   chartReference:
-    chart: jenkins
-    repo: https://charts.jenkins.io
-    version: 1.9.4
+    chart: nifi
+    repo: https://artifacthub.io/packages/helm/cetic/nifi
+    version: 1.12.1
     values: |
       ---
       master:
@@ -41,9 +41,9 @@ spec:
             enabled: false
             proxyCompatability: false
         serviceType: "ClusterIP"
-        jenkinsUriPrefix: "/jenkins"
+        nifiUriPrefix: "/nifi"
         ingress:
           enabled: true
-          path: /jenkins
+          path: /nifi
           annotations:
             kubernetes.io/ingress.class: traefik

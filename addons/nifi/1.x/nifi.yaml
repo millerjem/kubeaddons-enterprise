@@ -23,27 +23,14 @@ spec:
       enabled: true
   chartReference:
     chart: nifi
-    repo: https://artifacthub.io/packages/helm/cetic/nifi
+    repo: https://cetic.github.io/helm-charts
     version: 1.12.1
     values: |
       ---
-      master:
-        useSecurity: false
-        installPlugins:
-          - prometheus:2.0.6
-          - kubernetes:1.18.2
-          - workflow-job:2.33
-          - workflow-aggregator:2.6
-          - credentials-binding:1.19
-          - git:3.11.0
-        csrf:
-          defaultCrumbIssuer:
-            enabled: false
-            proxyCompatability: false
-        serviceType: "ClusterIP"
-        nifiUriPrefix: "/nifi"
-        ingress:
-          enabled: true
-          path: /nifi
-          annotations:
-            kubernetes.io/ingress.class: traefik
+      service:
+        type: ClusterIP
+      ingress:
+        enabled: true
+        path: /nifi
+        annotations:
+          kubernetes.io/ingress.class: traefik

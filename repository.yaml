@@ -1,5 +1,4 @@
----
-apiVersion: kubeaddons.mesosphere.io/v1beta2
+apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: AddonRepository
 metadata:
   name: kubeaddons-enterprise

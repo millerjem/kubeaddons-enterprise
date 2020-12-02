@@ -23,8 +23,8 @@ spec:
     - name: none
       enabled: true
   chartReference:
-    chart: cetic/nifi
-    repo: https://github.com/cetic/helm-nifi
+    chart: nifi
+    repo: https://kubernetes-charts-incubator.storage.googleapis.com
     version: 1.12.1
     values: |
       ---

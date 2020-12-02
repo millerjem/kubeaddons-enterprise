@@ -1,8 +1,8 @@
 ---
-apiVersion: kubeaddons.mesosphere.io/v1beta1
+apiVersion: kubeaddons.mesosphere.io/v1beta2
 kind: AddonRepository
 metadata:
-  name: example
+  name: kubeaddons-enterprise
 spec:
   priority: "1"
   url: "https://github.com/millerjem/kubeaddons-enterprise"

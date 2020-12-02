@@ -1,0 +1,37 @@
+---
+apiVersion: kubeaddons.mesosphere.io/v1beta1
+kind: Addon
+metadata:
+  name: nifi
+  namespace: sample
+  labels:
+    kubeaddons.mesosphere.io/name: nifi
+  annotations:
+    catalog.kubeaddons.mesosphere.io/addon-revision: "1.12.1-1"
+    appversion.kubeaddons.mesosphere.io/nifi: "1.12.1"
+    values.chart.helm.kubeaddons.mesosphere.io/nifi: "https://raw.githubusercontent.com/cetic/helm-nifi/master/values.yaml"
+spec:
+  kubernetes:
+    minSupportedVersion: v1.16.3
+  cloudProvider:
+    - name: aws
+      enabled: true
+    - name: azure
+      enabled: true
+    - name: docker
+      enabled: true
+    - name: none
+      enabled: true
+  chartReference:
+    chart: nifi
+    repo: https://cetic.github.io/helm-charts
+    version: 1.12.1
+    values: |
+      ---
+      service:
+        type: ClusterIP
+      ingress:
+        enabled: true
+        path: /nifi
+        annotations:
+          kubernetes.io/ingress.class: traefik

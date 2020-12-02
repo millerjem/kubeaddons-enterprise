@@ -24,7 +24,7 @@ spec:
       enabled: true
   chartReference:
     chart: cetic/nifi
-    repo: https://cetic.github.io/helm-charts
+    repo: https://github.com/cetic/helm-nifi
     version: 1.12.1
     values: |
       ---
